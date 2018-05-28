@@ -10,35 +10,38 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="net.simplifiedcoding.firebasedatabaseexample.ArtistActivity">
 
-    <TextView
+   <TableLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"></TableLayout> <TextView
         android:id="@+id/textViewArtist"
         android:padding="@dimen/activity_horizontal_margin"
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+   />
 
-    <EditText
+  <!--  <EditText
         android:layout_below="@id/textViewArtist"
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter track name" />
-
+-->
     <LinearLayout
         android:orientation="horizontal"
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextName">
-
+        >
+<!--
         <SeekBar
             android:layout_weight="1"
             android:id="@+id/seekBarRating"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:max="5"></SeekBar>
+            android:max="5"></SeekBar>-->
 
         <TextView
             android:text="1"
@@ -48,28 +51,30 @@
 
     </LinearLayout>
 
-
+<!--
     <Button
         android:id="@+id/buttonAddTrack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/linearLayout"
-        android:text="Add" />
+        android:text="Add" />-->
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/buttonAddTrack"
+
         android:padding="@dimen/activity_horizontal_margin"
         android:text="Tracks"
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
-    <ListView
+   <!-- <ListView
         android:id="@+id/listViewTracks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"></ListView>
+-->
 
+    />
 </RelativeLayout>

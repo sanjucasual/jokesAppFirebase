@@ -48,18 +48,18 @@ public class ArtistActivity extends AppCompatActivity {
         * */
         databaseTracks = FirebaseDatabase.getInstance().getReference("tracks").child(intent.getStringExtra(MainActivity.ARTIST_ID));
 
-        buttonAddTrack = (Button) findViewById(R.id.buttonAddTrack);
+        /*buttonAddTrack = (Button) findViewById(R.id.buttonAddTrack);
         editTextTrackName = (EditText) findViewById(R.id.editTextName);
-        seekBarRating = (SeekBar) findViewById(R.id.seekBarRating);
-        textViewRating = (TextView) findViewById(R.id.textViewRating);
+        seekBarRating = (SeekBar) findViewById(R.id.seekBarRating);*/
+        /*textViewRating = (TextView) findViewById(R.id.textViewRating);*/
         textViewArtist = (TextView) findViewById(R.id.textViewArtist);
-        listViewTracks = (ListView) findViewById(R.id.listViewTracks);
-
+        /*listViewTracks = (ListView) findViewById(R.id.listViewTracks);
+*/
         tracks = new ArrayList<>();
 
         textViewArtist.setText(intent.getStringExtra(MainActivity.ARTIST_NAME));
 
-        seekBarRating.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+      /*  seekBarRating.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 textViewRating.setText(String.valueOf(i));
@@ -75,17 +75,17 @@ public class ArtistActivity extends AppCompatActivity {
 
             }
         });
-
-        buttonAddTrack.setOnClickListener(new View.OnClickListener() {
+*/
+       /* buttonAddTrack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 saveTrack();
             }
-        });
+        });*/
     }
 
-    @Override
-    protected void onStart() {
+   /* @Override*/
+   /* protected void onStart() {
         super.onStart();
 
         databaseTracks.addValueEventListener(new ValueEventListener() {
@@ -105,9 +105,9 @@ public class ArtistActivity extends AppCompatActivity {
 
             }
         });
-    }
+    }*/
 
-    private void saveTrack() {
+    /*private void saveTrack() {
         String trackName = editTextTrackName.getText().toString().trim();
         int rating = seekBarRating.getProgress();
         if (!TextUtils.isEmpty(trackName)) {
@@ -119,5 +119,5 @@ public class ArtistActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Please enter track name", Toast.LENGTH_LONG).show();
         }
-    }
+    }*/
 }

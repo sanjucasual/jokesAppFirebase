@@ -11,13 +11,13 @@
     tools:context="net.simplifiedcoding.firebasedatabaseexample.MainActivity">
 
 
-    <EditText
+    <!--<EditText
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter name" />
+        android:hint="Enter name" />-->
 
-    <Spinner
+    <!--<Spinner
         android:id="@+id/spinnerGenres"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,9 +29,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/spinnerGenres"
-        android:text="Add" />
+        android:text="Add" />-->
 
-    <TextView
+    <!--<TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,19 +40,23 @@
         android:text="Artists"
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
-
-    <TextView
+-->
+   <!-- <TextView
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView"
         android:text="Tap on an Artist to add and view tracks"
-        android:textAlignment="center" />
+        android:textAlignment="center" />-->
 
     <ListView
         android:id="@+id/listViewArtists"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"></ListView>
+
+        android:divider="#71b1cf"
+        android:dividerHeight="2dp"
+
+       ></ListView>
 
 </RelativeLayout>
