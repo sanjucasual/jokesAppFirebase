@@ -52,14 +52,14 @@ public class MainActivity extends AppCompatActivity {
         spinnerGenre = (Spinner) findViewById(R.id.spinnerGenres);
         listViewArtists = (ListView) findViewById(R.id.listViewArtists);
 
-        buttonAddArtist = (Button) findViewById(R.id.buttonAddArtist);
+       /* buttonAddArtist = (Button) findViewById(R.id.buttonAddArtist);*/
 
         //list to store artists
         artists = new ArrayList<>();
 
 
         //adding an onclicklistener to button
-        buttonAddArtist.setOnClickListener(new View.OnClickListener() {
+       /* buttonAddArtist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //calling the method addArtist()
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 //this method is actually performing the write operation
                 addArtist();
             }
-        });
+        });*/
 
         //attaching listener to listview
         listViewArtists.setOnItemClickListener(new AdapterView.OnItemClickListener() {

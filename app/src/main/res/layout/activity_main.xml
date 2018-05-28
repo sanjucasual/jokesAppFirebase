@@ -10,6 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="net.simplifiedcoding.firebasedatabaseexample.MainActivity">
 
+<!--
 
     <EditText
         android:id="@+id/editTextName"
@@ -23,15 +24,16 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextName"
         android:entries="@array/genres"></Spinner>
+-->
 
-    <Button
+    <!--<Button
         android:id="@+id/buttonAddArtist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/spinnerGenres"
-        android:text="Add" />
+        android:text="Add" />-->
 
-    <TextView
+    <!--<TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,12 +49,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textView"
         android:text="Tap on an Artist to add and view tracks"
-        android:textAlignment="center" />
+        android:textAlignment="center" />-->
 
     <ListView
         android:id="@+id/listViewArtists"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"></ListView>
+        android:divider="@drawable/listviewbackground"
+        android:dividerHeight="2.5dp"
+        />
+
+
+
 
 </RelativeLayout>
