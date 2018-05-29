@@ -30,11 +30,11 @@ public class TrackList extends ArrayAdapter<Track> {
         View listViewItem = inflater.inflate(R.layout.layout_artist_list, null, true);
 
         TextView textViewName = (TextView) listViewItem.findViewById(R.id.textViewName);
-        TextView textViewRating = (TextView) listViewItem.findViewById(R.id.textViewGenre);
+//        TextView textViewRating = (TextView) listViewItem.findViewById(R.id.textViewGenre);
 
         Track track = tracks.get(position);
         textViewName.setText(track.getTrackName());
-        textViewRating.setText(String.valueOf(track.getRating()));
+//        textViewRating.setText(String.valueOf(track.getRating()));
 
         return listViewItem;
     }
