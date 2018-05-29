@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String ARTIST_ID = "net.simplifiedcoding.firebasedatabaseexample.artistid";
 
     EditText editTextName;
-    Spinner spinnerGenre;
+//    Spinner spinnerGenre;
     Button buttonAddArtist;
     ListView listViewArtists;
 
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         //getting views
         editTextName = (EditText) findViewById(R.id.editTextName);
-        spinnerGenre = (Spinner) findViewById(R.id.spinnerGenres);
+//        spinnerGenre = (Spinner) findViewById(R.id.spinnerGenres);
         listViewArtists = (ListView) findViewById(R.id.listViewArtists);
 
         buttonAddArtist = (Button) findViewById(R.id.buttonAddArtist);
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         dialogBuilder.setView(dialogView);
 
         final EditText editTextName = (EditText) dialogView.findViewById(R.id.editTextName);
-        final Spinner spinnerGenre = (Spinner) dialogView.findViewById(R.id.spinnerGenres);
+//        final Spinner spinnerGenre = (Spinner) dialogView.findViewById(R.id.spinnerGenres);
         final Button buttonUpdate = (Button) dialogView.findViewById(R.id.buttonUpdateArtist);
         final Button buttonDelete = (Button) dialogView.findViewById(R.id.buttonDeleteArtist);
 
@@ -121,9 +121,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String name = editTextName.getText().toString().trim();
-                String genre = spinnerGenre.getSelectedItem().toString();
+//                String genre = spinnerGenre.getSelectedItem().toString();
                 if (!TextUtils.isEmpty(name)) {
-                    updateArtist(artistId, name, genre);
+                    updateArtist(artistId, name);
                     b.dismiss();
                 }
             }
@@ -140,12 +140,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private boolean updateArtist(String id, String name, String genre) {
+    private boolean updateArtist(String id, String name) {
         //getting the specified artist reference
         DatabaseReference dR = FirebaseDatabase.getInstance().getReference("artists").child(id);
 
         //updating artist
-        Artist artist = new Artist(id, name, genre);
+        Artist artist = new Artist(id, name);
         dR.setValue(artist);
         Toast.makeText(getApplicationContext(), "Artist Updated", Toast.LENGTH_LONG).show();
         return true;
@@ -208,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
     private void addArtist() {
         //getting the values to save
         String name = editTextName.getText().toString().trim();
-        String genre = spinnerGenre.getSelectedItem().toString();
+//        String genre = spinnerGenre.getSelectedItem().toString();
 
         //checking if the value is provided
         if (!TextUtils.isEmpty(name)) {
@@ -218,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
             String id = databaseArtists.push().getKey();
 
             //creating an Artist Object
-            Artist artist = new Artist(id, name, genre);
+            Artist artist = new Artist(id, name);
 
             //Saving the Artist
             databaseArtists.child(id).setValue(artist);

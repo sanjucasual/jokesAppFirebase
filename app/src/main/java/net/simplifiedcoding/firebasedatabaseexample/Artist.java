@@ -9,16 +9,16 @@ import com.google.firebase.database.IgnoreExtraProperties;
 public class Artist {
     private String artistId;
     private String artistName;
-    private String artistGenre;
+//    private String artistGenre;
 
     public Artist(){
         //this constructor is required
     }
 
-    public Artist(String artistId, String artistName, String artistGenre) {
+    public Artist(String artistId, String artistName) {
         this.artistId = artistId;
         this.artistName = artistName;
-        this.artistGenre = artistGenre;
+//        this.artistGenre = artistGenre;
     }
 
     public String getArtistId() {
@@ -29,7 +29,7 @@ public class Artist {
         return artistName;
     }
 
-    public String getArtistGenre() {
+  /*  public String getArtistGenre() {
         return artistGenre;
-    }
+    }*/
 }
