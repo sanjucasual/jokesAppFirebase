@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     public static final String ARTIST_NAME = "net.simplifiedcoding.firebasedatabaseexample.artistname";
     public static final String ARTIST_ID = "net.simplifiedcoding.firebasedatabaseexample.artistid";
+
 
 
     EditText editTextName;
@@ -174,6 +176,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
         //attaching value event listener
         databaseArtists.addValueEventListener(new ValueEventListener() {
             @Override
@@ -181,7 +184,8 @@ public class MainActivity extends AppCompatActivity {
 
                 //clearing the previous artist list
                 artists.clear();
-
+                ProgressBar pgsBar = (ProgressBar)findViewById(R.id.pBar);
+                pgsBar.setVisibility(View.VISIBLE);
                 //iterating through all the nodes
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     //getting artist
@@ -189,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
                     //adding artist to the list
                     artists.add(artist);
                 }
-
+                pgsBar.setVisibility(View.GONE);
                 //creating adapter
                 ArtistList artistAdapter = new ArtistList(MainActivity.this, artists);
                 //attaching adapter to the listview
