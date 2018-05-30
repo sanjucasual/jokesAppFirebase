@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_artist"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,10 +12,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="net.simplifiedcoding.firebasedatabaseexample.ArtistActivity">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></TableLayout>
 
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:contentPadding="10dp">
     <TextView
         android:id="@+id/textViewArtist"
         android:layout_width="match_parent"
@@ -22,61 +29,49 @@
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:textStyle="bold" />
+    </android.support.v7.widget.CardView>
 
-    <!--  <EditText
-          android:layout_below="@id/textViewArtist"
-          android:id="@+id/editTextName"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="Enter track name" />
-  -->
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="146dp"
         android:orientation="horizontal">
-        <!--
-                <SeekBar
-                    android:layout_weight="1"
-                    android:id="@+id/seekBarRating"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:max="5"></SeekBar>-->
 
-        <!--<TextView
-            android:text="1"
-            android:id="@+id/textViewRating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />-->
+        <com.cuboid.cuboidcirclebutton.CuboidButton
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            app:cub_border_radius="0dp"
+            app:cub_color="#5FBDDD"
+            app:cub_hover_color="#a7a8af"
+            app:cub_icon="@drawable/leftbutton" />
+
+        <com.cuboid.cuboidcirclebutton.CuboidButton
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            app:cub_border_radius="0dp"
+            app:cub_color="#5FBDDD"
+            app:cub_hover_color="#a7a8af"
+            app:cub_icon="@drawable/sharebutton" />
+
+        <com.cuboid.cuboidcirclebutton.CuboidButton
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            app:cub_border_radius="0dp"
+            app:cub_color="#5fbddd"
+            app:cub_hover_color="#a7a8af"
+            app:cub_icon="@drawable/rightbutton" />
+
 
     </LinearLayout>
 
-    <!--
-        <Button
-            android:id="@+id/buttonAddTrack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/linearLayout"
-            android:text="Add" />-->
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
 
-        android:gravity="start"
 
-        android:padding="@dimen/activity_horizontal_margin"
-        android:textAlignment="textStart"
 
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
-    <!-- <ListView
-         android:id="@+id/listViewTracks"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_below="@+id/textView"></ListView>
- -->
 
-    />
+
+
 </RelativeLayout>
