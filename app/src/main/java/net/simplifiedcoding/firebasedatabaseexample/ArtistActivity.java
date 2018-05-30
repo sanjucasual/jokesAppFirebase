@@ -71,6 +71,10 @@ public class ArtistActivity extends AppCompatActivity {
        sharebutton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
+               Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
+               shareIntent.setType("text/plain");
+               shareIntent.putExtra(Intent.EXTRA_TEXT,textViewArtist.getText().toString()+" Install the best jokes app by installint with the following link");
+               startActivity(Intent.createChooser(shareIntent, "Share via"));
 
            }
        });
