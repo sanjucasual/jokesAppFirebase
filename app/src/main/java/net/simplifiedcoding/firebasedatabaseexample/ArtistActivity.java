@@ -12,6 +12,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cuboid.cuboidcirclebutton.CuboidButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,15 +24,16 @@ import java.util.List;
 
 public class ArtistActivity extends AppCompatActivity {
 
-    Button buttonAddTrack;
-    EditText editTextTrackName;
-    SeekBar seekBarRating;
-    TextView textViewRating, textViewArtist;
-    ListView listViewTracks;
+    CuboidButton leftbutton;
+    CuboidButton sharebutton;
+    CuboidButton rightbutton;
 
+    TextView textViewRating, textViewArtist;
+
+    int count;
     DatabaseReference databaseTracks;
 
-    List<Track> tracks;
+    List<Artist> artistsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,41 +50,49 @@ public class ArtistActivity extends AppCompatActivity {
         * */
         databaseTracks = FirebaseDatabase.getInstance().getReference("tracks").child(intent.getStringExtra(MainActivity.ARTIST_ID));
 
-        /*buttonAddTrack = (Button) findViewById(R.id.buttonAddTrack);
-        editTextTrackName = (EditText) findViewById(R.id.editTextName);
-        seekBarRating = (SeekBar) findViewById(R.id.seekBarRating);*/
-        /*textViewRating = (TextView) findViewById(R.id.textViewRating);*/
+        leftbutton= (CuboidButton)findViewById(R.id.leftbutton);
+        sharebutton= (CuboidButton)findViewById(R.id.sharebutton);
+        rightbutton= (CuboidButton)findViewById(R.id.rightbutton);
         textViewArtist = (TextView) findViewById(R.id.textViewArtist);
-        /*listViewTracks = (ListView) findViewById(R.id.listViewTracks);
-*/
-        tracks = new ArrayList<>();
 
-        textViewArtist.setText(intent.getStringExtra(MainActivity.ARTIST_NAME));
+         count=intent.getIntExtra("COUNT",0);
+         textViewArtist.setText(intent.getStringExtra(MainActivity.ARTIST_NAME));
+         artistsList=intent.getParcelableArrayListExtra(MainActivity.ARTIST_LIST);
 
-      /*  seekBarRating.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                textViewRating.setText(String.valueOf(i));
-            }
 
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
+       leftbutton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               count=count-1;
+               textViewArtist.setText(artistsList.get(count).getArtistName());
+           }
+       });
 
-            }
+       sharebutton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
 
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
+           }
+       });
 
-            }
-        });
-*/
-       /* buttonAddTrack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                saveTrack();
-            }
-        });*/
+       rightbutton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               count=count+1;
+               textViewArtist.setText(artistsList.get(count).getArtistName());
+           }
+       });
+
+
+
+
+
+
     }
+
+
+
+
 
    /* @Override*/
    /* protected void onStart() {

@@ -28,6 +28,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     public static final String ARTIST_NAME = "net.simplifiedcoding.firebasedatabaseexample.artistname";
     public static final String ARTIST_ID = "net.simplifiedcoding.firebasedatabaseexample.artistid";
+    public static final String ARTIST_LIST = "ARTIST_LIST";
+
 
 
 
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listViewArtists;
 
     //a list to store all the artist from firebase database
-    List<Artist> artists;
+    ArrayList<Artist> artists;
 
     //our database reference object
     DatabaseReference databaseArtists;
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
      /*   buttonAddArtist = (Button) findViewById(R.id.buttonAddArtist);*/
 
         //list to store artists
-        artists = new ArrayList<>();
+        artists = new ArrayList<Artist>();
 
 
         //adding an onclicklistener to button
@@ -88,6 +90,13 @@ public class MainActivity extends AppCompatActivity {
                 //putting artist name and id to intent
                 intent.putExtra(ARTIST_ID, artist.getArtistId());
                 intent.putExtra(ARTIST_NAME, artist.getArtistName());
+                intent.putExtra("COUNT",i);
+                Bundle bundle = new Bundle();
+                bundle.putParcelableArrayList(ARTIST_LIST, artists);
+                intent.putExtras(bundle);
+                startActivity(intent);
+
+
 
                 //starting the activity with intent
                 startActivity(intent);
@@ -106,72 +115,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-  /*  private void showUpdateDeleteDialog(final String artistId, String artistName) {
 
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        LayoutInflater inflater = getLayoutInflater();
-        final View dialogView = inflater.inflate(R.layout.update_dialog, null);
-        dialogBuilder.setView(dialogView);
-
-        final EditText editTextName = (EditText) dialogView.findViewById(R.id.editTextName);
-        final Spinner spinnerGenre = (Spinner) dialogView.findViewById(R.id.spinnerGenres);
-        final Button buttonUpdate = (Button) dialogView.findViewById(R.id.buttonUpdateArtist);
-        final Button buttonDelete = (Button) dialogView.findViewById(R.id.buttonDeleteArtist);
-
-        dialogBuilder.setTitle(artistName);
-        final AlertDialog b = dialogBuilder.create();
-        b.show();
-*/
-
-       /* buttonUpdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String name = editTextName.getText().toString().trim();
-                String genre = spinnerGenre.getSelectedItem().toString();
-                if (!TextUtils.isEmpty(name)) {
-                    updateArtist(artistId, name, genre);
-                    b.dismiss();
-                }
-            }
-        });
-*/
-
-      /*  buttonDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                deleteArtist(artistId);
-                b.dismiss();
-            }
-        });*/
-
-    /*private boolean updateArtist(String id, String name, String genre) {
-        //getting the specified artist reference
-        DatabaseReference dR = FirebaseDatabase.getInstance().getReference("artists").child(id);
-
-        //updating artist
-        Artist artist = new Artist(id, name, genre);
-        dR.setValue(artist);
-        Toast.makeText(getApplicationContext(), "Artist Updated", Toast.LENGTH_LONG).show();
-        return true;
-    }
-
-    private boolean deleteArtist(String id) {
-        //getting the specified artist reference
-        DatabaseReference dR = FirebaseDatabase.getInstance().getReference("artists").child(id);
-
-        //removing artist
-        dR.removeValue();
-
-        //getting the tracks reference for the specified artist
-        DatabaseReference drTracks = FirebaseDatabase.getInstance().getReference("tracks").child(id);
-
-        //removing all tracks
-        drTracks.removeValue();
-        Toast.makeText(getApplicationContext(), "Artist Deleted", Toast.LENGTH_LONG).show();
-
-        return true;
-    }*/
 
     @Override
     protected void onStart() {
