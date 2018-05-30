@@ -15,6 +15,8 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,11 +24,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     public static final String ARTIST_NAME = "net.simplifiedcoding.firebasedatabaseexample.artistname";
     public static final String ARTIST_ID = "net.simplifiedcoding.firebasedatabaseexample.artistid";
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+
 
     EditText editTextName;
 //    Spinner spinnerGenre;
@@ -42,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        startActivityForResult(AuthUI.getInstance()
+                .createSignInIntentBuilder().setAvailableProviders(
+                        Arrays.asList(new AuthUI.IdpConfig.Builder(AuthUI.EMAIL_PROVIDER).build()))
+                .build(),1);
+
         setContentView(R.layout.activity_main);
 
         //getting the reference of artists node
