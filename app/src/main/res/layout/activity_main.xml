@@ -10,59 +10,20 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="net.simplifiedcoding.firebasedatabaseexample.MainActivity">
 
-
-    <!--<EditText
-        android:id="@+id/editTextName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter name" />-->
-
-    <!--<Spinner
-        android:id="@+id/spinnerGenres"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextName"
-        android:entries="@array/genres"></Spinner>
-
-    <Button
-        android:id="@+id/buttonAddArtist"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spinnerGenres"
-        android:text="Add" />-->
-
-    <!--<TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/buttonAddArtist"
-        android:padding="@dimen/activity_horizontal_margin"
-        android:text="Artists"
-        android:textAlignment="center"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
--->
-   <!-- <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView"
-        android:text="Tap on an Artist to add and view tracks"
-        android:textAlignment="center" />-->
-
     <ListView
         android:id="@+id/listViewArtists"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="wrap_content">
 
-
-
-       ></ListView>
+    </ListView>
 
     <ProgressBar
         android:id="@+id/pBar"
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"></ProgressBar>
+        android:layout_centerInParent="true">
+
+    </ProgressBar>
 
 </RelativeLayout>
