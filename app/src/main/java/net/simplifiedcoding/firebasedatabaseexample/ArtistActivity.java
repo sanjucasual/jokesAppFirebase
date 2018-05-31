@@ -63,8 +63,12 @@ public class ArtistActivity extends AppCompatActivity {
        leftbutton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               count=count-1;
-               textViewArtist.setText(artistsList.get(count).getArtistName());
+               if(count <1) {
+                   Toast.makeText(getApplicationContext(),"you have reached the end",Toast.LENGTH_SHORT).show();
+               }else{
+                   count = count - 1;
+                   textViewArtist.setText(artistsList.get(count).getArtistName());
+               }
            }
        });
 
@@ -82,8 +86,12 @@ public class ArtistActivity extends AppCompatActivity {
        rightbutton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               count=count+1;
-               textViewArtist.setText(artistsList.get(count).getArtistName());
+               if(count<artistsList.size()-1) {
+                   count = count + 1;
+                   textViewArtist.setText(artistsList.get(count).getArtistName());
+               }else {
+                   Toast.makeText(getApplicationContext(),"you have reached the end",Toast.LENGTH_SHORT).show();
+               }
            }
        });
 
