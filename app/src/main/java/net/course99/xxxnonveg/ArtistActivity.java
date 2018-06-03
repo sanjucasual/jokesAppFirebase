@@ -1,25 +1,16 @@
-package net.simplifiedcoding.firebasedatabaseexample;
+package net.course99.xxxnonveg;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cuboid.cuboidcirclebutton.CuboidButton;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ArtistActivity extends AppCompatActivity {
@@ -77,7 +68,7 @@ public class ArtistActivity extends AppCompatActivity {
            public void onClick(View view) {
                Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
                shareIntent.setType("text/plain");
-               shareIntent.putExtra(Intent.EXTRA_TEXT,textViewArtist.getText().toString()+" Install the best jokes app by installint with the following link");
+               shareIntent.putExtra(Intent.EXTRA_TEXT,textViewArtist.getText().toString()+" अब हिंदी में पढ़िए नॉन वेज सेक्सी एडल्ट जोक्स | अभी इनस्टॉल करिये "+"https://play.google.com/store/apps/details?id=" + getPackageName());
                startActivity(Intent.createChooser(shareIntent, "Share via"));
 
            }

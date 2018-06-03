@@ -1,4 +1,4 @@
-package net.simplifiedcoding.firebasedatabaseexample;
+package net.course99.xxxnonveg;
 
 import android.os.Parcel;
 import android.os.Parcelable;

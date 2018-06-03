@@ -1,4 +1,4 @@
-package net.simplifiedcoding.firebasedatabaseexample;
+package net.course99.xxxnonveg;
 
 import android.util.Log;
 
@@ -15,7 +15,7 @@ public class MyFireBaseInstanceIDService extends FirebaseInstanceIdService {
     DatabaseReference tokenDB;
     @Override
     public void onTokenRefresh() {
-        FirebaseMessaging.getInstance().subscribeToTopic("jokes");
+        FirebaseMessaging.getInstance().subscribeToTopic("topic");
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d(TAG, "Refreshed token: " + refreshedToken);
 

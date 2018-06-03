@@ -1,4 +1,4 @@
-package net.simplifiedcoding.firebasedatabaseexample;
+package net.course99.xxxnonveg;
 
 import android.content.Context;
 import android.content.Intent;
