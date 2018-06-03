@@ -1,4 +1,4 @@
-package net.simplifiedcoding.firebasedatabaseexample;
+package net.course99.xxxnonveg;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("net.simplifiedcoding.firebasedatabaseexample", appContext.getPackageName());
+        assertEquals("net.course99.xxxnonveg", appContext.getPackageName());
     }
 }
