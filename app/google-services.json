@@ -1,31 +1,31 @@
 {
   "project_info": {
-    "project_number": "1029623491053",
-    "firebase_url": "https://artistexample-d98b9.firebaseio.com",
-    "project_id": "artistexample-d98b9",
-    "storage_bucket": "artistexample-d98b9.appspot.com"
+    "project_number": "596121275155",
+    "firebase_url": "https://non-veg-jokes-c7e92.firebaseio.com",
+    "project_id": "non-veg-jokes-c7e92",
+    "storage_bucket": "non-veg-jokes-c7e92.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1029623491053:android:3f5192377659e250",
+        "mobilesdk_app_id": "1:596121275155:android:38d6877445b12934",
         "android_client_info": {
-          "package_name": "net.simplifiedcoding.firebasedatabaseexample"
+          "package_name": "net.course99.xxxnonveg"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1029623491053-ao4vspi332m29vhqsqotbpn020pblc0c.apps.googleusercontent.com",
+          "client_id": "596121275155-q4br2rllcrbml45t0n7vjts9mpgm8860.apps.googleusercontent.com",
           "client_type": 3
         },
         {
-          "client_id": "1029623491053-ao4vspi332m29vhqsqotbpn020pblc0c.apps.googleusercontent.com",
+          "client_id": "596121275155-q4br2rllcrbml45t0n7vjts9mpgm8860.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCq6MYAMK0AsbTZ1m37glH1QN8osx3PQVk"
+          "current_key": "AIzaSyDAsH8iL-_7NdisZSK13t8-tzgu7WOm554"
         }
       ],
       "services": {
