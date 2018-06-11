@@ -19,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
     public static final String ARTIST_NAME = "net.course99.xxxnonveg.artistname";
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 pgsBar.setVisibility(View.GONE);
                 newartists.addAll(artists);
                 artists=newartists;
+                Collections.reverse(artists);
 
                 ArtistList artistAdapter = new ArtistList(MainActivity.this, artists);
                 //attaching adapter to the listview
